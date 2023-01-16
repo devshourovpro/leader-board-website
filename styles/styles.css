@@ -2,18 +2,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /* common styles or utilities */
-
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #F3F1FF;
+    background-image: url('/images/blogs/Screenshot\ 2023-01-13\ 194958.png');
+    background-color: #000000;
+    box-shadow: 0px 0px 10px 0px black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen;
 }
 
+/*----------------------- 
+Navigation Bar Styles 
+----------------------*/
+nav {
+    background-image: url('/images/blogs/new.jpg');
+    background-color: #5a5a5a;
+    box-shadow: 0px 0px 10px 0px black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: screen;
+}
+
+.navigation {
+    height: 94px;
+    padding: 0 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.nav-options {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+
+}
+
+
+.nav-info>ul {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+}
+
+.btn-primary {
+    background-color: #FF4A60;
+    height: 40px;
+    width: 100px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #982734;
+    color: #c0c0c0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/*------------------->
+   main part styles 
+<--------------------*/
 .container {
-    background-color: #ffffff;
+    background-color: #fff4e0e3;
     width: 870px;
     padding: 30px;
     border-radius: 10px;
     margin-top: 21px;
+    box-shadow: 0 0 20px 0;
 }
 
 main {
@@ -55,9 +124,15 @@ hr {
     height: 56px;
 }
 
-.player-name {
+.fa-brands {
+    color: #4949ff9c;
+}
+
+.player-name a {
     margin-left: 16px;
     font-size: 18px;
+    text-decoration: none;
+    color: black;
 }
 
 /*----------------
@@ -96,37 +171,44 @@ hr {
     text-decoration: none;
     font-size: 16px;
 }
+.thumbnail{
+    box-shadow: 0 0 5px 0 rebeccapurple;
+    border-radius: 10px;
+}
 
 /*-------------------
     Courses Styles 
  -------------------*/
- .courses{
+.courses {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 24px;
     justify-content: center;
 
- }
- .course{
+}
+
+.course {
     box-shadow: 0px 5px 13px #0000000d;
     border-radius: 10px;
     padding: 10px 10px;
- }
+}
+
 .course .course-banner img {
     width: 266px;
     height: 141px;
 }
-
 .course-info {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 10px;
 
 }
-.ratting{
+
+.ratting {
     color: #9F9F9F;
 }
+
 .fa-star.filled {
     color: #FFC014;
 }
@@ -139,24 +221,97 @@ hr {
     background: #FFE4E8;
     border-radius: 14.6913px;
     padding: 5px 10px;
-    color: #FF4A60;
+    color: #ff001e;
+}
+/* Footer styles */
+.footer-style{
+    background-image: url('/images/blogs/new.jpg');
+    background-color: #5a5a5a;
+    box-shadow: 0px 0px 10px 0px black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: screen;
+    color: white;
+    height: 100px;
+    margin-top: 50px;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
 }
 
 /*----------------------
      Media Queries
 ------------------------ */
 @media only screen and (max-width: 688px) {
+    .navigation {
+        padding: 0;
+        gap: 0;
+    }
+    .my-profile, .logo{
+        margin:  10px;
+    }
+    
+    .nav-info>ul{
+        margin: 0;
+        gap: 15px;
+    }
 
-    .container{
+    .container {
         width: 70%;
     }
-    .section-title{
+
+    .section-title {
         text-align: center;
+        border: 1px solid mediumslateblue;
+        border-radius: 5px;
     }
-    .players, .blogs, .courses{
+
+    .players,
+    .blogs,
+    .courses {
         grid-template-columns: repeat(1, 1fr);
     }
-    .player, .blog{
+
+    .player,
+    .blog {
+        flex-direction: column;
+    }
+    .blog-info{
+        margin: 0;
+    }
+}
+
+/*------------------------
+  Tablet Devices Styles 
+-------------------------*/
+@media only screen and (min-width: 688px) and (max-width: 992px) {
+    .navigation {
+       justify-content: space-around;
+       padding: 0;
+        gap: 0;
+    }
+    .my-profile, .logo{
+       
+    }
+    
+    .nav-info>ul{
+       
+        gap: 15px;
+    }
+    .container {
+        width: 75%;
+    }
+
+    .players,
+    .courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blogs {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .player {
         flex-direction: column;
     }
 }
